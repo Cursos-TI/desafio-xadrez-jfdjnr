@@ -47,5 +47,20 @@ int main() {
 
     } while (i <= numcasas);
 
+    //seta as variaveis para valor 1 e 0.
+        numcasas = 1;
+        i = 0;
+
+        printf("Movimento do Cavalo: \n");
+
+      while (numcasas--)
+      {
+            for (i = 0; i < 2; i++){
+            printf("Cima!\n");
+            }
+        printf("Direita!\n");
+    
+    }
+
     return 0;
 }
