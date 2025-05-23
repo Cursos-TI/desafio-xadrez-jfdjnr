@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-//void da torre, oferece ao usuario escolher a direção e a quantidade de casas.
 void torre(int casas, int dir){
     if (casas > 0)
     {
@@ -26,37 +25,6 @@ void torre(int casas, int dir){
     }
 }
 
-//void do Bispo, oferece ao usuario escolher a direção e a quantidade de casas.
-void bispo(int casas, int dir){
-    if (casas > 0)
-    {
-        switch (dir)
-        {
-        case 1: 
-            printf("Direita!\n");
-            printf("Cima!\n");
-            break;
-        case 2:
-            printf("Esquerda!\n");
-            printf("Cima!\n");
-            break;
-        case 3:
-            printf("Direita!\n");
-            printf("Baixo!\n");
-            break;
-        case 4:
-            printf("Esquerda!\n");
-            printf("Baixo!\n");
-            break;
-        default:
-            printf("Você digitou uma opção inválida...\n");
-            break;
-        }
-    bispo(casas - 1, dir);
-    }
-}
-
-//void da Rainha, oferece ao usuario escolher a direção (8 possibilidades) e a quantidade de casas.
 void rainha(int casas, int dir){
     if (casas > 0)
     {
@@ -98,24 +66,49 @@ void rainha(int casas, int dir){
     }
 }
 
+void bispo(int casas, int dir){
+    if (casas > 0)
+    {
+        switch (dir)
+        {
+        case 1: 
+            printf("Direita!\n");
+            printf("Cima!\n");
+            break;
+        case 2:
+            printf("Esquerda!\n");
+            printf("Cima!\n");
+            break;
+        case 3:
+            printf("Direita!\n");
+            printf("Baixo!\n");
+            break;
+        case 4:
+            printf("Esquerda!\n");
+            printf("Baixo!\n");
+            break;
+        default:
+            printf("Você digitou uma opção inválida...\n");
+            break;
+        }
+    bispo(casas - 1, dir);
+    }
+}
+    
 
- //void do cavalo, infelizmente tive dificuldades em implementar opções de escolha, já que o cavalo possue trajetopria sempre limitada a 3 casas.   
 void cavalo(int casas){
     if (casas > 0){
         printf("Cima!\n");
-        cavalo(casas - 1);
     } else 
         printf("Direita!\n");
-    
+    cavalo(casas - 1);
 }
-
-//Inicio da interação com o usuario.
 int main(){
 
     int casas, dir;
     printf("###Bem Vindos ao Jogo de Xadrez###\n");
     printf("\n");
-    printf("Vamos Mover a torre! \n");                  //Entrada de dados da Torre.
+    printf("Vamos Mover a torre! \n");
     printf("Escolha uma das opções abaixo: \n");
     printf("1. Mover para a Direita. \n");
     printf("2. Mover para a Esquerda. \n");
@@ -130,7 +123,7 @@ int main(){
     dir = 0;
 
     printf("\n");
-    printf("Vamos Mover o Bispo! \n");                  //Entrada de dados do Bispo
+    printf("Vamos Mover o Bispo! \n");
     printf("Escolha uma das opções abaixo: \n");
     printf("1. Mover para a Direita Superior. \n");
     printf("2. Mover para a Esquerda Superior . \n");
@@ -146,7 +139,7 @@ int main(){
 
     printf("\n");
     printf("Vamos Mover a Rainha! \n");
-    printf("Escolha uma das opções abaixo: \n");         //Entrada de dados da Rainha
+    printf("Escolha uma das opções abaixo: \n");
     printf("1. Mover para a Direita. \n");
     printf("2. Mover para a Esquerda. \n");
     printf("3. Mover para Cima. \n");
@@ -163,7 +156,7 @@ int main(){
     casas = 0;
     dir = 0;
 
-    printf("\n");                                   //Apresentação do void do cavalo.
+    printf("\n");
     printf("Vamos Mover o Cavalo! \n");
     casas = 2;
     cavalo(casas);
